@@ -182,7 +182,7 @@ function updateTimer2(update) {
         time2--;
     }
 
-    if (time2 <= 0) {
+    if (time2 < 0) {
         lose.play();
         clearInterval(timeInterval);
         btn2.classList.remove("active");
