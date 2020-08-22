@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+
+    background-color: #333;
+}
+
+.container {
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn {
+    height: 35vh;
+    width: 90vw;
+    font-size: 4rem;
+    letter-spacing: 6px;
+    background-color: rgb(80, 79, 79);
+    /* 22AED1 */
+    border: none;
+    border-radius: 4px;
+
+
+}
+
+.btn.active {
+    background: rgb(250, 245, 151);
+    background: linear-gradient(90deg, rgb(219, 223, 0) 0%, rgb(223, 216, 99) 91%);
+}
+
+.btn.lost {
+    background: red;
+    color: #fff;
+}
+
+.btn-1 {
+    transform: rotateZ(180deg);
+}
+
+.settings {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+}
+
+.pause {
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    width: 0;
+    height: 74px;
+
+    border-color: transparent transparent transparent #202020;
+    transition: 100ms all ease;
+    cursor: pointer;
+
+    /* play state */
+
+}
+
+.pause.show {
+    border-style: double;
+    border-width: 0px 0 0px 60px;
+}
+
+.pause:hover {
+    border-color: transparent transparent transparent #404040;
+
+}
+
+img {
+    height: 80px;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.optionPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 140px;
+}
+
+.optionPanel>div {
+    display: flex;
+    margin-top: 10px;
+}
+
+.reset-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.reset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 140px;
+}
+
+.reset p {
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.reset .answer {
+    width: 176px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reset .answer button {
+    margin-top: 15px;
+    padding: 7px 24px;
+    border: none;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 1.1rem;
+}
+
+input {
+    width: 200px;
+}
+
+.optionPanel div p {
+    width: 94px;
+    color: #fff;
+}
+
+.options-done {
+    width: 40px;
+    align-self: center;
+    margin-top: 40px;
+}
+
+@media screen and (min-width: 1024px) {
+    .btn {
+        width: 70vh;
+    }
+}

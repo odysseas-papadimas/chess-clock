@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no,  initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Chess Clock</title>
+</head>
+
+<body>
+    <div class="container">
+        <button class="btn btn-1">10:00</button>
+        <div class="settings">
+            <img class="options" src="./img/options.png"></img>
+            <button class="pause show"></button>
+            <img class="full-screen" src="./img/full-screen.png" alt="">
+        </div>
+        <div class="modal">
+            <div class="optionPanel">
+                <div>
+                    <p>Minutes:</p>
+                    <input class="minutes" type="number" name="" id="minutes">
+                </div>
+                <div>
+                    <p>Increment:</p>
+                    <input class="increment" type="number" name="" id="increment">
+                </div>
+
+                <button class="options-done">OK</button>
+            </div>
+        </div>
+        <div class="reset-modal">
+            <div class="reset">
+                <p>Reset the clock?</p>
+                <div class="answer">
+                    <button class="no">No</button>
+                    <button class="yes">Yes</button>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-2">10:00</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
