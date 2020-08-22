@@ -36,7 +36,6 @@ function turn() {
 
         btn2.classList.remove("active");
     }
-    console.log('Turn!');
 }
 
 const pauseHandler = () => {
@@ -64,7 +63,6 @@ optionsDone.addEventListener("click", () => {
     if (!isNaN(parseInt(minutesInput.value)) && !isNaN(parseInt(incrementInput.value))) {
         startingTime = parseInt(minutesInput.value);
         increment = parseInt(incrementInput.value) + 1;
-        console.log(startingTime, increment);
         modal.style.display = 'none';
         time1 = startingTime * 60;
         time2 = startingTime * 60;
@@ -122,7 +120,6 @@ function btn2Func() {
 
 function reset() {
     resetModal.style.display = 'block';
-    console.log('hi');
     resetYes.addEventListener("click", () => location.reload());
     resetNo.addEventListener("click", () => resetModal.style.display = 'none');
 }
@@ -173,7 +170,6 @@ function updateTimer1(update) {
 function updateTimer2(update) {
     const minutes = Math.floor(time2 / 60);
     let seconds = time2 % 60;
-    console.log('1', seconds);
     if (seconds < 10) {
         seconds = `0${seconds}`;
     }
