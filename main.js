@@ -36,7 +36,6 @@ function turn() {
 
         btn2.classList.remove("active");
     }
-    console.log('Turn!');
 }
 
 const pauseHandler = () => {
@@ -54,6 +53,7 @@ const fullScreenHandler = () => {
 fullScreen.addEventListener("click", fullScreenHandler);
 
 const optionsHandler = () => {
+    pauseHandler(); //Pause when you click options
     modal.style.display = 'block';
 }
 
@@ -63,7 +63,6 @@ optionsDone.addEventListener("click", () => {
     if (!isNaN(parseInt(minutesInput.value)) && !isNaN(parseInt(incrementInput.value))) {
         startingTime = parseInt(minutesInput.value);
         increment = parseInt(incrementInput.value) + 1;
-        console.log(startingTime, increment);
         modal.style.display = 'none';
         time1 = startingTime * 60;
         time2 = startingTime * 60;
@@ -79,6 +78,7 @@ btn1.addEventListener("click", btn1Func);
 
 function btn1Func() {
     if (pause.classList[1] != 'show' && gameStarted == true && !btn2.classList.contains("active")) {
+        click1.play(); //Also play after resuming
         pause.classList.add("show");
         startTimer(btn2);
     } else if (!btn1.classList.contains("active") && !btn2.classList.contains("active") && !lost) {
@@ -100,8 +100,8 @@ btn2.addEventListener("click", btn2Func);
 
 function btn2Func() {
     if (pause.classList[1] != 'show' && gameStarted == true && !btn1.classList.contains("active")) {
+        click2.play();
         pause.classList.add("show");
-        console.log('hello');
         startTimer(btn1);
     } else if (!btn2.classList.contains("active") && !btn1.classList.contains("active") && !lost) {
         click2.play();
@@ -120,7 +120,6 @@ function btn2Func() {
 
 function reset() {
     resetModal.style.display = 'block';
-    console.log('hi');
     resetYes.addEventListener("click", () => location.reload());
     resetNo.addEventListener("click", () => resetModal.style.display = 'none');
 }
@@ -171,7 +170,6 @@ function updateTimer1(update) {
 function updateTimer2(update) {
     const minutes = Math.floor(time2 / 60);
     let seconds = time2 % 60;
-    console.log('1', seconds);
     if (seconds < 10) {
         seconds = `0${seconds}`;
     }
