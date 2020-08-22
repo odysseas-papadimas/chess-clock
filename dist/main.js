@@ -54,6 +54,7 @@ const fullScreenHandler = () => {
 fullScreen.addEventListener("click", fullScreenHandler);
 
 const optionsHandler = () => {
+    pauseHandler(); //Pause when you click options
     modal.style.display = 'block';
 }
 
@@ -79,6 +80,7 @@ btn1.addEventListener("click", btn1Func);
 
 function btn1Func() {
     if (pause.classList[1] != 'show' && gameStarted == true && !btn2.classList.contains("active")) {
+        click1.play(); //Also play after resuming
         pause.classList.add("show");
         startTimer(btn2);
     } else if (!btn1.classList.contains("active") && !btn2.classList.contains("active") && !lost) {
@@ -100,8 +102,8 @@ btn2.addEventListener("click", btn2Func);
 
 function btn2Func() {
     if (pause.classList[1] != 'show' && gameStarted == true && !btn1.classList.contains("active")) {
+        click2.play();
         pause.classList.add("show");
-        console.log('hello');
         startTimer(btn1);
     } else if (!btn2.classList.contains("active") && !btn1.classList.contains("active") && !lost) {
         click2.play();
