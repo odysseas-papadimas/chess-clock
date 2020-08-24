@@ -83,6 +83,7 @@ function btn1Func() {
         startTimer(btn2);
     } else if (!btn1.classList.contains("active") && !btn2.classList.contains("active") && !lost) {
         click1.play();
+        pause.classList.add("show");
         gameStarted = true;
         startTimer(btn2);
     } else if (btn1.classList.contains("active") && !lost) {
@@ -105,6 +106,7 @@ function btn2Func() {
         startTimer(btn1);
     } else if (!btn2.classList.contains("active") && !btn1.classList.contains("active") && !lost) {
         click2.play();
+        pause.classList.add("show");
         gameStarted = true;
         startTimer(btn1);
     } else if (btn2.classList.contains("active")) {
