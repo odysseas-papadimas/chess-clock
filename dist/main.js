@@ -61,8 +61,8 @@ const optionsHandler = () => {
 options.addEventListener("click", optionsHandler);
 
 optionsDone.addEventListener("click", () => {
-    if (!isNaN(parseInt(minutesInput.value)) && !isNaN(parseInt(incrementInput.value))) {
-        if (minutesInput.value > 100 || incrementInput.value > 60) {
+    
+        if (minutesInput.value > 100 || incrementInput.value > 60 || minutesInput.value == '' || incrementInput.value == '') {
             warningP.style.display = 'block';
             optionsDone.style.marginTop = '15px';
         } else {
@@ -77,10 +77,6 @@ optionsDone.addEventListener("click", () => {
             warningP.style.display = 'none';
             optionsDone.style.marginTop = '30px';
         }
-
-    } else {
-
-    }
 });
 
 btn1.addEventListener("click", btn1Func);
