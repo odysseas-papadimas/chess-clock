@@ -61,7 +61,8 @@ const optionsHandler = () => {
 options.addEventListener("click", optionsHandler);
 
 optionsDone.addEventListener("click", () => {
-        if (minutesInput.value > 100 || incrementInput.value > 60) {
+    
+        if (minutesInput.value > 100 || incrementInput.value > 60 || minutesInput.value == '' || incrementInput.value == '') {
             warningP.style.display = 'block';
             optionsDone.style.marginTop = '15px';
         } else {
