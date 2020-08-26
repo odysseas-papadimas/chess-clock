@@ -111,6 +111,32 @@ img:hover {
     margin-top: 10px;
 }
 
+.optionPanel span {
+    text-align: center;
+}
+
+.optionPanel .warning {
+    color: red;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    display: none;
+}
+
+.options-done {
+    color: black;
+    border: none;
+    padding: 10px 25px;
+    background-color: #fff;
+    align-self: center;
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+
+.options-done:hover {
+    background-color: rgb(184, 180, 180);
+    cursor: pointer;
+}
+
 .reset-modal {
     display: none;
     position: fixed;
@@ -160,13 +186,6 @@ input {
     width: 94px;
     color: #fff;
 }
-
-.options-done {
-    width: 40px;
-    align-self: center;
-    margin-top: 40px;
-}
-
 @media screen and (min-width: 1024px) {
     .btn {
         width: 70vh;

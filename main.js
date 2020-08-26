@@ -7,6 +7,7 @@ const options = document.querySelector(".options");
 const minutesInput = document.querySelector("#minutes");
 const incrementInput = document.querySelector("#increment");
 const optionsDone = document.querySelector(".options-done");
+const warningP = document.querySelector(".warning");
 const modal = document.querySelector(".modal");
 const resetModal = document.querySelector(".reset-modal");
 const resetYes = document.querySelector(".yes");
@@ -60,18 +61,21 @@ const optionsHandler = () => {
 options.addEventListener("click", optionsHandler);
 
 optionsDone.addEventListener("click", () => {
-    if (!isNaN(parseInt(minutesInput.value)) && !isNaN(parseInt(incrementInput.value))) {
-        startingTime = parseInt(minutesInput.value);
-        increment = parseInt(incrementInput.value) + 1;
-        modal.style.display = 'none';
-        time1 = startingTime * 60;
-        time2 = startingTime * 60;
+        if (minutesInput.value > 100 || incrementInput.value > 60) {
+            warningP.style.display = 'block';
+            optionsDone.style.marginTop = '15px';
+        } else {
+            startingTime = parseInt(minutesInput.value);
+            increment = parseInt(incrementInput.value) + 1;
+            modal.style.display = 'none';
+            time1 = startingTime * 60;
+            time2 = startingTime * 60;
 
-        btn1.textContent = `${startingTime}:00`;
-        btn2.textContent = `${startingTime}:00`;
-    } else {
-
-    }
+            btn1.textContent = `${startingTime}:00`;
+            btn2.textContent = `${startingTime}:00`;
+            warningP.style.display = 'none';
+            optionsDone.style.marginTop = '30px';
+        }
 });
 
 btn1.addEventListener("click", btn1Func);
@@ -164,7 +168,7 @@ function updateTimer1(update) {
         removeListeners();
 
         window.addEventListener("click", (e) => {
-            if(e.target != resetNo) reset();
+            if (e.target != resetNo) reset();
         });
     }
 }
@@ -192,7 +196,7 @@ function updateTimer2(update) {
         removeListeners();
 
         window.addEventListener("click", (e) => {
-            if(e.target != resetNo) reset();
+            if (e.target != resetNo) reset();
         });
     }
 }
